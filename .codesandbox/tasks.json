@@ -2,6 +2,14 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
+      "command": "pwd",
+      "name": "where am I?"
+    },
+    {
+      "command": "ls",
+      "name": "what is there?"
+    },
+    {
       "command": "yarn install",
       "name": "Installing Node packages"
     },

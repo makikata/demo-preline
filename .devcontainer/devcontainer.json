@@ -4,7 +4,7 @@
   "name": "Ruby on Rails & Postgres",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/project/app"
+  "workspaceFolder": "/project/demo-preline"
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
