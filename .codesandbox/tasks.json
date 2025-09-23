@@ -21,6 +21,10 @@
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
+    "db:migrate": {
+      "name": "Run migrations",
+      "command": "bundle exec rails db:migrate"
+    },
     "build": {
       "name": "build",
       "command": "yarn build"
