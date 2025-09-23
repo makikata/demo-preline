@@ -1,0 +1,41 @@
+@import "tailwindcss" source("../../../app");
+@import "preline/variants.css";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/container-queries";
+@plugin "@tailwindcss/forms";
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant surehover ((hover: hover) and (pointer: fine));
+@source "../../../node_modules/preline/dist/*.js";
+
+@theme {
+    --font-roboto: "Roboto", var(--font-sans);
+    --font-inter: "Inter var", var(--font-sans);
+
+    /* Animation for highlight */
+    --animate-highlight: highlight 3s;
+    --highlight-bg: oklch(79.2% 0.209 151.711deg);
+
+    @keyframes highlight {
+        0% {
+            background: var(--highlight-bg, var(--color-violet-200));
+        }
+
+        100% {
+            background: none;
+        }
+    }
+}
+
+/* Adds pointer cursor to buttons */
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
