@@ -40,6 +40,7 @@ exclude_patterns = [
   "**/templates/**",
   "**/testdata/**",
   "**/vendor/**",
+  "out/**",
 ]
 
 test_patterns = [
@@ -60,25 +61,38 @@ mode = "comment"
 name = "default"
 default = true
 
-
 [[plugin]]
 name = "actionlint"
 
 [[plugin]]
+name = "checkov"
+
+[[plugin]]
 name = "dockerfmt"
+
+[[plugin]]
+name = "dotenv-linter"
+mode = "comment"
+
+[[plugin]]
+name = "eslint"
+version = "9.32.0"
+package_file = "package.json"
+package_filters = ["eslint"]
 
 [[plugin]]
 name = "hadolint"
 
 [[plugin]]
 name = "markdownlint"
-drivers = [
-  "lint",
-]
 mode = "comment"
 
 [[plugin]]
 name = "osv-scanner"
+
+[[plugin]]
+name = "prettier"
+version = "3.6.2"
 
 [[plugin]]
 name = "radarlint-iac"
@@ -88,17 +102,29 @@ mode = "monitor"
 name = "radarlint-js"
 
 [[plugin]]
+name = "reek"
+mode = "comment"
+
+# See https://docs.qlty.sh/custom-checks#ripgrep-patterns
+[[plugin]]
 name = "ripgrep"
 mode = "comment"
 
 [[plugin]]
+name = "standardrb"
+mode = "disabled"
+
+[[plugin]]
 name = "rubocop"
-drivers = [
-  "lint",
-]
+version = "1.79.2"
+package_file = "Gemfile"
+package_filters = ["rubocop"]
 
 [[plugin]]
 name = "stylelint"
+version = "16.23.0"
+package_file = "package.json"
+package_filters = ["stylelint"]
 
 [[plugin]]
 name = "trivy"
@@ -112,3 +138,7 @@ name = "trufflehog"
 
 [[plugin]]
 name = "yamllint"
+
+[[exclude]]
+plugins = ["dotenv-linter"]
+file_patterns = [".envrc"]
