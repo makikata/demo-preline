@@ -1,0 +1,17 @@
+{
+  "extends": ["@thoughtbot/stylelint-config", "stylelint-config-tailwindcss"],
+  "rules": {
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "plugin",
+          "theme",
+          "utility",
+          "custom-variant",
+          "source"
+        ]
+      }
+    ]
+  }
+}
