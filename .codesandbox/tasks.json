@@ -2,36 +2,43 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
-      "command": "pwd",
-      "name": "where am I?"
+      "name": "Installing Node packages",
+      "command": "yarn install"
     },
     {
-      "command": "ls",
-      "name": "what is there?"
-    },
-    {
-      "command": "yarn install",
-      "name": "Installing Node packages"
-    },
-    {
-      "command": "bundle install",
-      "name": "Installing Ruby packages"
+      "name": "Installing Ruby packages",
+      "command": "bundle install"
     }
   ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
+    "build": {
+      "name": "build:js",
+      "command": "yarn build:js && yarn build:css"
+    },
+    "watch:js": {
+      "name": "build:js",
+      "command": "yarn build:js --watch"
+    },
+    "watch:css": {
+      "name": "build:css",
+      "command": "yarn build:css --watch"
+    },
+    "db:prepare": {
+      "name": "rails:db:prepare",
+      "command": "bundle exec rails db:prepare"
+    },
     "db:migrate": {
       "name": "Run migrations",
       "command": "bundle exec rails db:migrate"
     },
-    "build": {
-      "name": "build",
-      "command": "yarn build"
-    },
-    "build:css": {
-      "name": "build:css",
-      "command": "yarn build:css"
+    "rails:server": {
+      "name": "rails:server",
+      "command": "bundle exec rails server -p 3000",
+      "preview": {
+        "port": 3000
+      }
     }
   }
 }
