@@ -14,19 +14,19 @@
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
     "build": {
-      "name": "build:js",
-      "command": "yarn build:js && yarn build:css"
+      "name": "build js and css",
+      "command": "yarn build"
     },
     "watch:js": {
-      "name": "build:js",
+      "name": "watch:js",
       "command": "yarn build:js --watch"
     },
     "watch:css": {
-      "name": "build:css",
+      "name": "watch:css",
       "command": "yarn build:css --watch"
     },
     "db:prepare": {
-      "name": "rails:db:prepare",
+      "name": "Prepare database",
       "command": "bundle exec rails db:prepare"
     },
     "db:migrate": {
@@ -34,7 +34,7 @@
       "command": "bundle exec rails db:migrate"
     },
     "rails:server": {
-      "name": "rails:server",
+      "name": "Run rails server",
       "command": "bundle exec rails server -p 3000",
       "preview": {
         "port": 3000
